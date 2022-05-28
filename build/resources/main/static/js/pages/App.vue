@@ -37,7 +37,6 @@
         addHandler(data => {
           if (data.objectType === 'MESSAGE') {
             const index = this.messages.findIndex(item => item.id === data.body.id)
-
             switch (data.eventType) {
               case 'CREATE':
               case 'UPDATE':
@@ -48,6 +47,7 @@
                 }
                 break
               case 'REMOVE':
+                this.messages.splice(index, 1)
                 break
               default:
                 console.error(`Looks like the event type if unknown "${data.eventType}"`)

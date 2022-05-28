@@ -42,11 +42,11 @@ public class MessageController {
     @PostMapping
     public Message create(@RequestBody Message message) {
         message.setCreationDate(LocalDateTime.now());
-        Message updateMessage = messageRepo.save(message);
+        Message updatedMessage = messageRepo.save(message);
 
-        wsSender.accept(EventType.CREATE, updateMessage);
+        wsSender.accept(EventType.CREATE, updatedMessage);
 
-        return updateMessage;
+        return updatedMessage;
     }
 
     @PutMapping("{id}")
@@ -56,11 +56,11 @@ public class MessageController {
     ) {
         BeanUtils.copyProperties(message, messageFromDb, "id");
 
-        Message updateMessage = messageRepo.save(message);
+        Message updatedMessage = messageRepo.save(messageFromDb);
 
-        wsSender.accept(EventType.UPDATE, updateMessage);
+        wsSender.accept(EventType.UPDATE, updatedMessage);
 
-        return updateMessage;
+        return updatedMessage;
     }
 
     @DeleteMapping("{id}")

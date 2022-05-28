@@ -23,16 +23,18 @@ public class WsSender {
 
     public <T> BiConsumer<EventType, T> getSender(ObjectType objectType, Class view) {
         ObjectWriter writer = mapper
-                .setConfig(this.mapper.getSerializationConfig())
+                .setConfig(mapper.getSerializationConfig())
                 .writerWithView(view);
 
         return (EventType eventType, T payload) -> {
             String value = null;
+
             try {
                 value = writer.writeValueAsString(payload);
             } catch (JsonProcessingException e) {
                 throw new RuntimeException(e);
             }
+
             template.convertAndSend(
                     "/topic/activity",
                     new WsEventDto(objectType, eventType, value)
