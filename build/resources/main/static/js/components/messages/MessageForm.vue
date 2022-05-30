@@ -1,25 +1,25 @@
 <template>
-    <v-layout row class="mt-3">
-        <v-text-field
-            label="New message"
-            placeholder="Write something"
-            v-model="text"
-        />
-      <v-btn
-          :loading="loading3"
-          :disabled="loading3"
-          color="#474747"
-          class="ma-2 white--text"
-          v-on:click="save"
-          @click="loader = 'loading3'"
-      >
-        Save
-      </v-btn>
-    </v-layout>
+  <v-layout row>
+    <v-text-field
+        label="New message"
+        placeholder="Write something"
+        v-model="text"
+    />
+    <v-btn
+        :loading="loading3"
+        :disabled="loading3"
+        color="#474747"
+        class="ma-2 white--text"
+        v-on:click="save"
+        @click="loader = 'loading3'"
+    >
+      Save
+    </v-btn>
+  </v-layout>
 </template>
 
 <script>
-import { mapActions } from "vuex"
+  import { mapActions } from "vuex"
 
 export default {
   props: ['messageAttr'],
@@ -102,3 +102,25 @@ export default {
   }
 }
 </style>
+
+<!--
+<template>
+    <v-layout row class="mt-3">
+        <v-text-field
+            label="New message"
+            placeholder="Write something"
+            v-model="text"
+        />
+      <v-btn
+          :loading="loading3"
+          :disabled="loading3"
+          color="#474747"
+          class="ma-2 white--text"
+          v-on:click="save"
+          @click="loader = 'loading3'"
+      >
+        Save
+      </v-btn>
+    </v-layout>
+</template>
+-->
