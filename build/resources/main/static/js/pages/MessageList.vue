@@ -1,6 +1,6 @@
 <template>
   <v-main class="pt-5">
-    <v-layout align-content-space-around column mx-15>
+    <v-layout align-content-space-around column mx-15 px-15>
       <message-form :messageAttr="message" />
       <message-row v-for="message in sortedMessages"
                    :key="message.id"
