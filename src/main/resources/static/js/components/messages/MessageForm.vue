@@ -50,7 +50,7 @@ export default {
     ...mapActions(['addMessageAction', 'updateMessageAction']),
     save() {
       const message = {
-        id: this.id,
+        id: null,
         text: this.text
       }
       if (this.id) {
@@ -59,7 +59,7 @@ export default {
         this.addMessageAction(message)
       }
       this.text = ''
-      this.id = ''
+      this.id = null
     }
   }
 }
