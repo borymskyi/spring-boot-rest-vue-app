@@ -24,12 +24,14 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-security:2.6.7'
 	implementation 'org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.6.6'
 
-	implementation 'org.springframework.session:spring-session-jdbc:2.6.3'
+	/*implementation 'org.springframework.session:spring-session-jdbc:2.6.3'*/
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.6.7'
 
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 
 	implementation 'org.jsoup:jsoup:1.15.1'
+
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:2.11.3'
 
 }
 

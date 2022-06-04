@@ -12,7 +12,7 @@
         <v-spacer></v-spacer>
         <v-btn small
                v-if="profile"
-               :disabled="$route.path === '/profile'"
+               :disabled="$route.path === '/user'"
                @click="showProfile">
           {{profile.name}}
         </v-btn>
@@ -28,23 +28,22 @@
 </template>
 
 <script>
-  import { mapState, mapMutations } from 'vuex'
-  import { addHandler } from 'util/ws'
-
+import { mapState, mapMutations } from 'vuex'
+import { addHandler } from 'util/ws'
 export default {
   computed: mapState(['profile']),
   methods: {
     ...mapMutations([
-        'addMessageMutation',
-        'updateMessageMutation',
-        'removeMessageMutation',
-        'addCommentMutation'
+      'addMessageMutation',
+      'updateMessageMutation',
+      'removeMessageMutation',
+      'addCommentMutation'
     ]),
     showMessages() {
       this.$router.push('/')
     },
     showProfile() {
-      this.$router.push('/profile')
+      this.$router.push('/user')
     }
   },
   created() {
