@@ -31,8 +31,6 @@ dependencies {
 
 	implementation 'org.jsoup:jsoup:1.15.1'
 
-	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:2.11.3'
-
 }
 
 tasks.named('test') {

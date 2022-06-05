@@ -18,12 +18,12 @@
             </v-layout>
           </v-flex>
         </v-layout>
-        <b-btn
-          v-if="!isMyProfile"
-          @click="changeSubscription"
+        <v-btn
+            v-if="!isMyProfile"
+            @click="changeSubscription"
         >
           {{isISubscribed ? 'Unsubscribe' : 'Subscribe'}}
-        </b-btn>
+        </v-btn>
       </v-flex>
     </v-layout>
   </v-main>
@@ -46,7 +46,7 @@ export default {
     isISubscribed() {
       return this.profile.subscribers &&
           this.profile.subscribers.find(subscription => {
-            return subscription.id === this.$store.state.profile.id
+            return subscription.subscriber === this.$store.state.profile.id
           })
     }
   },

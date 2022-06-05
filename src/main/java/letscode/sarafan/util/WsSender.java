@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import letscode.sarafan.dto.EventType;
 import letscode.sarafan.dto.ObjectType;
 import letscode.sarafan.dto.WsEventDto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +17,7 @@ public class WsSender {
     private final SimpMessagingTemplate template;
     private final ObjectMapper mapper;
 
+    @Autowired
     public WsSender(SimpMessagingTemplate template, ObjectMapper mapper) {
         this.template = template;
         this.mapper = mapper;
