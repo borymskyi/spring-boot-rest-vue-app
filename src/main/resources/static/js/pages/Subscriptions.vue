@@ -3,7 +3,8 @@
     <v-layout justify-space-around>
       <v-list>
         <v-list-item-title
-            v-for="item in subscriptions"
+            v-for="(item, idx) in subscriptions"
+            :key="idx"
         >
           <user-link
               :user="item.subscriber"

@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "@sentry/tracing": "^7.1.1",
+    "@sentry/vue": "^7.1.1",
     "@stomp/stompjs": "^6.1.2",
     "sockjs-client": "^1.6.0",
     "vue": "^2.6.14",

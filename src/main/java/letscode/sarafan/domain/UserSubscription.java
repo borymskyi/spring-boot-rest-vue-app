@@ -48,4 +48,8 @@ public class UserSubscription implements Serializable {
         this.subscriber = subscriber;
         this.id = new UserSubscriptionId(channel.getId(), subscriber.getId());
     }
+
+    public UserSubscription() {
+
+    }
 }

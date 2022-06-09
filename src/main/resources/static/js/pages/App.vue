@@ -1,30 +1,30 @@
 <template>
-    <v-app>
-      <v-app-bar app color="#181818" dark>
-        <v-toolbar-title>Sarafan</v-toolbar-title>
-        <v-btn small
-               v-if="profile"
-               :disabled="$route.path === '/'"
-               @click="showMessages"
-               class="ms-3">
-          Messages
-        </v-btn>
-        <v-spacer></v-spacer>
-        <v-btn small
-               v-if="profile"
-               :disabled="$route.path === '/user'"
-               @click="showProfile">
-          {{profile.name}}
-        </v-btn>
-        <v-btn v-if="profile" icon href="/logout">
-          <v-icon>exit_to_app</v-icon>
-        </v-btn>
-      </v-app-bar>
+  <v-app>
+    <v-app-bar app color="#181818" dark>
+      <v-toolbar-title>Sarafan</v-toolbar-title>
+      <v-btn small
+             v-if="profile"
+             :disabled="$route.path === '/'"
+             @click="showMessages"
+             class="ms-3">
+        Messages
+      </v-btn>
+      <v-spacer></v-spacer>
+      <v-btn small
+             v-if="profile"
+             :disabled="$route.path === '/user'"
+             @click="showProfile">
+        {{profile.name}}
+      </v-btn>
+      <v-btn v-if="profile" icon href="/logout">
+        <v-icon>exit_to_app</v-icon>
+      </v-btn>
+    </v-app-bar>
 
-      <v-main>
-        <router-view></router-view>
-      </v-main>
-    </v-app>
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
