@@ -31,6 +31,8 @@ dependencies {
 
 	implementation 'org.jsoup:jsoup:1.15.1'
 
+	implementation 'io.sentry:sentry-spring:6.0.0'
+
 }
 
 tasks.named('test') {
