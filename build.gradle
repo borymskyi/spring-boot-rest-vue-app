@@ -2,11 +2,21 @@ plugins {
 	id 'org.springframework.boot' version '2.6.7'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id "com.github.node-gradle.node" version "3.3.0"
 }
 
 group = 'letscode'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+
+task buildFront(type: YarnTask) {
+	// add the express package only
+	args = ['build']
+}
+
+yarn_install.dependsOn(yarn_cache_clean)
+buildFront.dependsOn(yarn_install)
+processResources.dependsOn(buildFront)
 
 repositories {
 	mavenCentral()

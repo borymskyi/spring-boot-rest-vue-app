@@ -43,6 +43,7 @@
 
 <script>
 import profileApi from 'api/profile'
+
 export default {
   name: 'Profile',
   data() {
